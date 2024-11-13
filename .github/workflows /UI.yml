@@ -2,7 +2,7 @@ name: Selenium Pytest on Chrome
 
 on:
   push:
-     branches: [ "main" ]
+     branches: [ "Go_Notebuilder_Base" ]
 
 jobs:
   test:
