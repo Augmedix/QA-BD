@@ -1,1 +1,52 @@
+name: Selenium Pytest on Chrome
 
+on:
+  push:
+     branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      DISPLAY: :99  # Required for headless testing
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Set up ChromeDriver
+      run: |
+        # Retrieve the installed Chrome version
+        CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
+
+        # Construct the download URL
+        CHROMEDRIVER_URL="https://storage.googleapis.com/chrome-for-testing-public/$CHROME_VERSION/linux64/chromedriver-linux64.zip"
+
+        # Download the ChromeDriver
+        wget $CHROMEDRIVER_URL -O chromedriver_linux64.zip
+
+        # Unzip the ChromeDriver and navigate into the extracted folder
+        unzip chromedriver_linux64.zip
+        sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
+        rm -rf chromedriver_linux64.zip chromedriver-linux64
+
+        # Install and start Xvfb for headless testing
+        sudo apt-get install -y xvfb
+        Xvfb :99 &
+
+    - name: Run tests
+      env:
+        BROWSER: chrome
+      run: |
+        python3 -m pytest -m ui test --html=report.html --self-contained-html
+
+    - name: Upload HTML Report as Artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: html-report
+        path: report.html
