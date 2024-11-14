@@ -27,4 +27,4 @@ jobs:
 
       - name: Run home screen tests
         run: |
-          pytest tests/test_home_screen.py
+          pytest test/ui/testcases/test_home_screen.py
