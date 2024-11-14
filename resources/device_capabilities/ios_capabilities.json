@@ -1,0 +1,44 @@
+{
+    "capabilities": {
+         "local_caps": {
+            "platformName": "iOS",
+            "platformVersion": "17",
+            "appiumVersion": "2.5.1",
+            "deviceName": "iPhone 14",
+            "udid": "will be fetched from real device properties file",
+            "automationName": "XCUITest",
+            "app": "will be generated dynamically",
+            "ensureWebviewsHavePages": true,
+            "xcodeOrgId": "BT2F97D2JX",
+            "xcodesigningId": "iPhone Developer",
+            "newCommandTimeout": 240
+        },
+        "lambdatest_caps": {
+            "lt:options": {
+                  "app": "will be generated dynamically",
+                  "autoGrantPermissions": false,
+                  "console": true,
+                  "devicelog": true,
+                  "idleTimeout": 1800,
+                  "build": "AX_Test",
+                  "name": "Augmedix GO ED",
+                  "isRealMobile": true,
+                  "paltformName": "iOS",
+                  "deviceName": "iPhone 15",
+                  "platformVersion": 17,
+                  "queueTimeout": 900,
+                  "visual": true,
+                  "newCommandTimeout": 240,
+                  "w3c": true,
+                  "autoAcceptAlerts" : false,
+                  "network": true,
+                  "timezone": "America/Los_Angeles",
+                  "lambda:keepAlive": true,
+                  "smartWait": true,
+                  "disableScreenshots": true,
+                  "locale": "en_US",
+                  "language": "en"
+            }
+        }
+    }
+}
