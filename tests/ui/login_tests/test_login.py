@@ -36,3 +36,5 @@ class TestLogin(BaseTest):
         self.home_page.click_and_wait(HomePage.SIGNOUT_LINK)
         with allure.step('After logout, Login Page should be displayed'):
             assert self.login_page.is_element_visible(LoginPage.LOGIN_BTN, 5)
+
+    #TEST
