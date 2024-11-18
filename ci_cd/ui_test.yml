@@ -1,57 +1,57 @@
-name: Selenium Pytest on Chrome
+# name: Selenium Pytest on Chrome
 
-on:
-  push:
-     branches: [ "Go_Notebuilder_Base" ]
+# on:
+#   push:
+#      branches: [ "Go_Notebuilder_Base" ]
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    env:
-      DISPLAY: :99  # Required for headless testing
+# jobs:
+#   test:
+#     runs-on: ubuntu-latest
+#     env:
+#       DISPLAY: :99  # Required for headless testing
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v4
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-    - name: Set up ChromeDriver
-      run: |
-        # Retrieve the installed Chrome version
-        CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
-        # Construct the download URL
-        CHROMEDRIVER_URL="https://storage.googleapis.com/chrome-for-testing-public/$CHROME_VERSION/linux64/chromedriver-linux64.zip"
-        # Download the ChromeDriver
-        wget $CHROMEDRIVER_URL -O chromedriver_linux64.zip
-        # Unzip the ChromeDriver and navigate into the extracted folder
-        unzip chromedriver_linux64.zip
-        sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
-        rm -rf chromedriver_linux64.zip chromedriver-linux64
-        # Install and start Xvfb for headless testing
-        sudo apt-get install -y xvfb
-        Xvfb :99 &
-    - name: Run tests
-      env:
-        BROWSER: chrome
-        ENV: "STAGE"
-        STAGE_BASE_URL: ${{ secrets.STAGE_BASE_URL }}
-        STAGE_GRAPHQL_URL: ${{ secrets.STAGE_GQL_GATEWAY_URL }}
-        STAGE_PROV_USERNAME: ${{ secrets.STAGE_GQL_PROV_USERNAME }}
-        STAGE_PROV_PASSWORD: ${{ secrets.STAGE_GQL_PROV_PASSWORD }}
+#     - name: Install dependencies
+#       run: |
+#         pip install -r requirements.txt
+#     - name: Set up ChromeDriver
+#       run: |
+#         # Retrieve the installed Chrome version
+#         CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+\.\d+')
+#         # Construct the download URL
+#         CHROMEDRIVER_URL="https://storage.googleapis.com/chrome-for-testing-public/$CHROME_VERSION/linux64/chromedriver-linux64.zip"
+#         # Download the ChromeDriver
+#         wget $CHROMEDRIVER_URL -O chromedriver_linux64.zip
+#         # Unzip the ChromeDriver and navigate into the extracted folder
+#         unzip chromedriver_linux64.zip
+#         sudo mv chromedriver-linux64/chromedriver /usr/local/bin/
+#         rm -rf chromedriver_linux64.zip chromedriver-linux64
+#         # Install and start Xvfb for headless testing
+#         sudo apt-get install -y xvfb
+#         Xvfb :99 &
+#     - name: Run tests
+#       env:
+#         BROWSER: chrome
+#         ENV: "STAGE"
+#         STAGE_BASE_URL: ${{ secrets.STAGE_BASE_URL }}
+#         STAGE_GRAPHQL_URL: ${{ secrets.STAGE_GQL_GATEWAY_URL }}
+#         STAGE_PROV_USERNAME: ${{ secrets.STAGE_GQL_PROV_USERNAME }}
+#         STAGE_PROV_PASSWORD: ${{ secrets.STAGE_GQL_PROV_PASSWORD }}
 
-      run: |
-        python3 -m pytest -m ui tests/ui --html=report.html --self-contained-html
-    - name: Upload HTML Report as Artifact
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: html-report
-        path: report.html
+#       run: |
+#         python3 -m pytest -m ui tests/ui --html=report.html --self-contained-html
+#     - name: Upload HTML Report as Artifact
+#       if: always()
+#       uses: actions/upload-artifact@v4
+#       with:
+#         name: html-report
+#         path: report.html
 
-# FAQ:
-# Q: Why separate UI tests into a specific GitHub Action?
-# A: Segmentation allows control over different test types and improves debugging in CI/CD.
-# Q: Can this action be reused for other tests?
-# A: Yes, you can adjust paths or add more steps.
+# # FAQ:
+# # Q: Why separate UI tests into a specific GitHub Action?
+# # A: Segmentation allows control over different test types and improves debugging in CI/CD.
+# # Q: Can this action be reused for other tests?
+# # A: Yes, you can adjust paths or add more steps.

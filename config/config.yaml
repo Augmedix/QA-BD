@@ -1,13 +1,13 @@
 
-# Configuration settings for the testing framework.
-# Define important constants and URLs used throughout the tests.
+# # Configuration settings for the testing framework.
+# # Define important constants and URLs used throughout the tests.
 
-# Key Configuration
-search_url: "https://www.google.com"
-api_base_url: "https://www.googleapis.com/customsearch/v1"
+# # Key Configuration
+# search_url: "https://www.google.com"
+# api_base_url: "https://www.googleapis.com/customsearch/v1"
 
-# FAQ:
-# Q: Why are we using a YAML file for configuration?
-# A: YAML is human-readable and easy to edit, making it convenient for storing configurations that may change.
-# Q: Can I store sensitive data here?
-# A: No, sensitive data like API keys should be stored in environment variables.
+# # FAQ:
+# # Q: Why are we using a YAML file for configuration?
+# # A: YAML is human-readable and easy to edit, making it convenient for storing configurations that may change.
+# # Q: Can I store sensitive data here?
+# # A: No, sensitive data like API keys should be stored in environment variables.
