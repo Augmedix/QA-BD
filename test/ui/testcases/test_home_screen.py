@@ -1,5 +1,4 @@
 import time
-
 import allure
 import pytest
 from appium.webdriver.common.appiumby import AppiumBy
