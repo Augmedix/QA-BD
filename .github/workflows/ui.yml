@@ -35,6 +35,9 @@ jobs:
         run: |
           pylint $(git ls-files '*.py') --fail-under=9.85 || pylint-exit $?
 
-      - name: Run home screen tests
+      - name: Run the script with SECRET_KEY
+        env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: |
           pytest test/ui/testcases/test_home_screen.py
+        
