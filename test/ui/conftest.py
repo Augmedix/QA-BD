@@ -122,7 +122,7 @@ def pytest_configure(config):   # pylint: disable=too-many-locals, too-many-stat
         configs.set_config('url', url)
 
     # browser_version = config.getoption('--browser-version') or configs.get_config('browser_version')
-
+    
     #   Load & set environment variables
     env_var_prefix = configs.get_config('environment_variable_prefix')
 
