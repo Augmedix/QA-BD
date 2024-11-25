@@ -1,0 +1,62 @@
+{
+    "id" : 5,
+    "duration": "01:19",
+    "conversations": [
+        {
+            "id": 1,
+            "speaker": "provider",
+            "words": "hey, nice to meet you. So what brings you here today?",
+            "metadata": {
+              "highlight": []
+            }
+        },
+        {
+            "id": 2,
+            "speaker": "patient",
+            "words": "I have a back pain.",
+            "metadata": {
+              "highlight": ["back pain"]
+            }
+        },
+        {
+            "id": 3,
+            "speaker": "provider",
+            "words": "oh, how do you know it's back pain?",
+            "metadata": {
+              "highlight": ["back pain"]
+            }
+        },
+        {
+            "id": 4,
+            "speaker": "patient",
+            "words": "I strained by back kayaking. Tylenol isnt helping. and i've been doing my regular stretching and it isn’t helping.",
+            "metadata": {
+              "highlight": []
+            }
+        },
+        {
+            "id": 5,
+            "speaker": "provider",
+            "words": "Okay I’ll take a look at that. You're taking metformin 500 mg 1 tab twice a day, for your diabetes? Yep. Any issues with taking it? Have you experienced any numbness or tingling in the hands and feet?",
+            "metadata": {
+              "highlight": ["metformin 500 mg", "diabetes"]
+            }
+        },
+        {
+            "id": 6,
+            "speaker": "patient",
+            "words": "Nope. It's all fine. And do you check your sugar three times a day. No. I usually only do it in the morning.",
+            "metadata": {
+              "highlight": []
+            }
+        },
+        {
+            "id": 7,
+            "speaker": "provider",
+            "words": "What would be your average readings in the mornings? Around 140 or so. Definitely better than what it used to be. Okay. I'm going to change that. So, next time, you're ordering the test strips to account for that. all right. here's your results. This was last year, and this is your recent test. Basically, you can see the difference. Hum. Yeah. So, your MCV and the CBC is borderline elevated. It's basically one of the anemia markers, but if you look at your red count or a hemoglobin, it's normal, including hematocrit. So, no sign of anemia. This happens sometimes, and you get abnormalities that normalize, I look at the big picture, there's no need to worry about these small abnormalities that happen from time to time, because they usually normalize, like, in this case, you know. Oh, good. I thought there would be something wrong. If you really want to know what's going on, for example, this is saying that the moment your blood was drawn, your lymphocytes were borderline, but you can see the recheck was normal, so not a problem. These are your kidney tests, your kidney function is great. Your blood glucose at the moment was 143, I just disregarded it if I have an A1c because it's your sugar over three months instead of a snapshot, as long as your A1c was done and it's normal, it's okay. And your A1c is 6. 9. For patients under 65 like you, we want the A1c to be under 7, which is 6.9 is, so that's pretty good.",
+            "metadata": {
+              "highlight": []
+            }
+        }
+    ]
+}

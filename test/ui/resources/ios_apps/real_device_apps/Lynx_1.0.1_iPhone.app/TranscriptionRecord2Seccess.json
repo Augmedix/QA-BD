@@ -1,0 +1,46 @@
+{
+    "id" : 2,
+    "duration": "01:19",
+    "conversations": [
+        {
+            "id": 1,
+            "speaker": "provider",
+            "words": "Okay. that's good. the good thing is that kidney function, sugar, they all look good. We just have to get that cholesterol back down and keep an eye on the protein and see if there's any changes, okay? And if that does continue, we'll increase the losartan. For example, your pressure today, what was it, 125/78? So, the other factor that can determine if losartan is increased or not is the blood pressure. If it's too low, I don't like to increase it, because it will go even lower. if you don't feel more tired than usual, or dizzy, I would keep it at that level. Are you still taking Tramadol for your our back pain? ",
+            "metadata": {
+              "highlight": []
+            }
+        },
+        {
+            "id": 2,
+            "speaker": "patient",
+            "words": "Yes, and it seems to be working.",
+            "metadata": {
+              "highlight": []
+            }
+        },
+        {
+            "id": 3,
+            "speaker": "provider",
+            "words": "Okay, thats great to hear. How often are to taking it? ",
+            "metadata": {
+              "highlight": []
+            }
+        },
+        {
+            "id": 4,
+            "speaker": "patient",
+            "words": "Only when it flares up, which might be twice a week.",
+            "metadata": {
+              "highlight": []
+            }
+        },
+        {
+            "id": 5,
+            "speaker": "provider",
+            "words": "Okay, then why don’t you continue taking Tramadol as needed. Okay. Good. Okay. You're all set. Any other questions for me? Nope. That's all for me. Great. I'll see you in four weeks to check on your cholesterol levels. I just ordered some labs. Make sure you do it like a week before you come in.",
+            "metadata": {
+              "highlight": ["metformin 500 mg", "diabetes"]
+            }
+        }
+    ]
+}

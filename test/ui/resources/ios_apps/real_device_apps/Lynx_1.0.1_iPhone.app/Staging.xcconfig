@@ -1,0 +1,16 @@
+//
+//  Staging.xcconfig
+//  Lynx
+//
+//  Created by Salman Soumik on 6/22/22.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include "Pods/Target Support Files/Pods-Lynx/Pods-Lynx.staging.xcconfig"
+
+PROVIDER_SERVICE_URL = https:/$()/stage-api2.augmedix.com/provider/v1
+AUTH_SERVICE_URL = https:/$()/stage-api2.augmedix.com/auth/v1
+CUSTOMER_SERVICE_URL = https:/$()/staging-customer.augmedix.com
+APP_BUNDLE_ID = com.augmedix.Lynx.staging
+APP_ENV = Staging

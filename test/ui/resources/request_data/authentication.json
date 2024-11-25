@@ -1,0 +1,17 @@
+{
+    "payload": {
+        "username": "",
+        "password": "",
+        "userType": "provider",
+        "authType": "password",
+        "appCheckEnabled": true,
+        "rootCheckEnabled": true,
+        "debugCheckEnabled": true,
+        "versionCode": 1111,
+        "versionName": "versionName",
+        "deviceTag": "IOS123TEST"
+    },
+    "headers": {
+        "Content-Type": "application/json"
+    }
+}

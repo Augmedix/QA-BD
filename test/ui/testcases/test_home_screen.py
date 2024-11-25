@@ -1,19 +1,15 @@
-import time
 import allure
 import pytest
-from appium.webdriver.common.appiumby import AppiumBy
-from selenium.webdriver.common.by import By
 
 import conftest as cnf
 from pages.admin_pages.admin_home_page import AdminHomePage
 from pages.admin_pages.admin_login_page import LoginPage
 from pages.admin_pages.admin_provider_page import AdminProviderPage
-from pages.reset_password_screen_page import ResetPasswordScreenPage
-from pages.home_screen_page import HomeScreenPage
 from pages.appointment_screen_page import AppointmentScreenPage
+from pages.home_screen_page import HomeScreenPage
 from testcases.base_test import BaseTest
 from data.data import Data
-from pages.support_screen_page import SupportScreenPage
+
 from utils.email_client import EmailClient
 import urllib.parse
 
@@ -31,8 +27,6 @@ class TestHomeScreen(BaseTest):
         self.admin_home_page = AdminHomePage(self.browser_driver)
         self.admin_provider_page = AdminProviderPage(self.browser_driver)
         self.home_screen_page = HomeScreenPage(self.appium_driver)
-        self.reset_password_screen_page = ResetPasswordScreenPage(self.appium_driver)
-        self.support_screen_page = SupportScreenPage(self.appium_driver)
         self.appointment_screen_page = AppointmentScreenPage(self.appium_driver)
         self.data = Data()
         self.email_client = EmailClient()
@@ -47,10 +41,10 @@ class TestHomeScreen(BaseTest):
     def reset_app(self):
         self.home_screen_page.reset_app()
 
-    @pytest.fixture
+    """ @pytest.fixture
     def click_on_back_button_after_testcase(self):
         yield
-        self.home_screen_page.click_and_wait(self.reset_password_screen_page.BACK_BTN, 1)
+        self.home_screen_page.click_and_wait(self.reset_password_screen_page.BACK_BTN, 1) """
 
     @pytest.fixture
     def navigate_back_to_app_after_testcase(self):

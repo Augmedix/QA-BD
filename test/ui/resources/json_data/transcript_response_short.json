@@ -1,0 +1,118 @@
+{
+    "id": "provider-c81e2638-07b7-47e8-9db0-0a8de1378bee-a559a5c3-bf01-43d3-a61e-33591ad3762d-3eae8087-b81c-4633-b040-64ac6958f5cb",
+    "duration": "2:06",
+    "dictation": false,
+    "conversations": [
+        {
+            "id": 1,
+            "speaker": "2",
+            "words": "Hey, how are you doing?",
+            "metadata": {
+                "highlight": []
+            }
+        },
+        {
+            "id": 2,
+            "speaker": "3",
+            "words": "I'm okay.",
+            "metadata": {
+                "highlight": []
+            }
+        },
+        {
+            "id": 3,
+            "speaker": "2",
+            "words": "Good to hear. I'll catch up with you, just have a seat here. Let's talk about your diabetes. You were taking metformin 500 mg 1 tab twice a day, right?",
+            "metadata": {
+                "highlight": [
+                    "metformin 500 mg 1 tab twice a day,"
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "speaker": "3",
+            "words": "Yep.",
+            "metadata": {
+                "highlight": []
+            }
+        },
+        {
+            "id": 5,
+            "speaker": "2",
+            "words": "Have you been having any issues?",
+            "metadata": {
+                "highlight": []
+            }
+        },
+        {
+            "id": 6,
+            "speaker": "3",
+            "words": "I've been feeling some fatigue, I guess.",
+            "metadata": {
+                "highlight": []
+            }
+        },
+        {
+            "id": 7,
+            "speaker": "2",
+            "words": "And do you check your blood sugar at home?",
+            "metadata": {
+                "highlight": []
+            }
+        },
+        {
+            "id": 8,
+            "speaker": "3",
+            "words": "Every morning. It's usually around 140 or so. Definitely better than what it used to be.",
+            "metadata": {
+                "highlight": [
+                    "140"
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "speaker": "2",
+            "words": "Okay. Let's take a look at your results. Your blood glucose was 143, but your A1c is 6.9. Which is pretty good for your age. We'll continue you on Metformin, since it seems to be working well.",
+            "metadata": {
+                "highlight": [
+                    "Metformin,",
+                    "6.9",
+                    "143,",
+                    "continue"
+                ]
+            }
+        },
+        {
+            "id": 10,
+            "speaker": "1",
+            "words": "Sounds good. Enough for your hyperlipidemia. Looking at your panel, your LDL, which is the bad 1, is 128, which is trending in the wrong direction compared to last year",
+            "metadata": {
+                "highlight": [
+                    "128,",
+                    "1,"
+                ]
+            }
+        },
+        {
+            "id": 11,
+            "speaker": "2",
+            "words": "So, are you currently taking pravastatin 10 mg once per day, right?",
+            "metadata": {
+                "highlight": [
+                    "pravastatin 10 mg once per day,"
+                ]
+            }
+        },
+        {
+            "id": 12,
+            "speaker": "1",
+            "words": "Yes.",
+            "metadata": {
+                "highlight": []
+            }
+        }
+    ],
+    "ml_run": true
+}

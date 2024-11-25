@@ -1,0 +1,7 @@
+{
+    "timestamp": 1656484895338,
+    "status": 400,
+    "error": "Bad Request",
+    "message": "Required String parameter 'deviceTag' is not present",
+    "path": "/providers/me/settings"
+}

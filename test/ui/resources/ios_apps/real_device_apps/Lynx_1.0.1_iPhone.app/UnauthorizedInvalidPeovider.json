@@ -1,0 +1,8 @@
+
+{
+    "timestamp": "2022-05-31T11:31:12.171+0000",
+    "status": 401,
+    "error": "Unauthorized",
+    "message": "Invalid Provider account.",
+    "path": "/token"
+}

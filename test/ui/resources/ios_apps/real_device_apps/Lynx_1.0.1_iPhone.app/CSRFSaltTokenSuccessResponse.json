@@ -1,0 +1,8 @@
+{
+  "redirectUrl": "",
+  "csrfSalt": "fake-csrf-token",
+  "success": false,
+  "errorType": "CSRF_TOKEN",
+  "message": "invalid csrf",
+  "isSessionExpired": false
+}
