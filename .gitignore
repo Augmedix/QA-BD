@@ -25,6 +25,9 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+# Ignore sensitive files
+test/ui/resources/credentials/client_secrets.json
+test/ui/resources/credentials/google_saved_credentials.txt
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
