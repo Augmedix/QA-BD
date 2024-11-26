@@ -4,8 +4,8 @@ Blocked account screen.
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 
-from pages.base_page import BasePage
-from pages.home_screen_page import HomeScreenPage
+from test.ui.pages.base_page import BasePage
+from test.ui.pages.home_screen_page import HomeScreenPage
 
 
 class AccountBlockedScreenPage(BasePage):

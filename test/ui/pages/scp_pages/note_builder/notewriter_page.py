@@ -5,12 +5,12 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
-import pages
-from pages.base_page import BasePage
-import pages.scp_pages
-from pages.scp_pages.home_page import HomePage
-import pages.scp_pages.home_page
-import pages.scp_pages.login_page
+import test.ui.pages
+from test.ui.pages.base_page import BasePage
+import test.ui.pages.scp_pages
+from test.ui.pages.scp_pages.home_page import HomePage
+import test.ui.pages.scp_pages.home_page
+import test.ui.pages.scp_pages.login_page
 # from pages.text_expanders.macro_usage_page import MacroUsagePage
 
 
@@ -232,7 +232,7 @@ class NotewriterPage(BasePage):
         """
         Deletes all notes from notewriter.
         """
-        home_page = pages.scp_pages.home_page.HomePage(self.driver)
+        home_page = test.ui.pages.scp_pages.home_page.HomePage(self.driver)
         home_page.wait_for_loader()
         self.click_and_wait_for_target(self.NOTEWRITER_ACTION_ICON_LOCATOR, self.DELETE_ALL_PATIENT_LOCATOR)
         self.click_and_wait_for_target(self.DELETE_ALL_PATIENT_LOCATOR, self.CONFIRM_DELETE_BTN_LOCATOR)

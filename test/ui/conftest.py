@@ -30,12 +30,12 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.common.exceptions import WebDriverException
 import time
-from utils.app_constants import AppConstant
-from utils.config_parser import ConfigParser
-from utils.google_drive_manager import GoogleDriveManager
-from utils.lambdatest_manager import LambdaManager
+from test.ui.utils.app_constants import AppConstant
+from test.ui.utils.config_parser import ConfigParser
+from test.ui.utils.google_drive_manager import GoogleDriveManager
+from test.ui.utils.lambdatest_manager import LambdaManager
 from appium.webdriver.common.appiumby import AppiumBy
-from utils.helper import get_formatted_date_str, generate_random_string
+from test.ui.utils.helper import get_formatted_date_str, generate_random_string
 
 
 class Unmarker:

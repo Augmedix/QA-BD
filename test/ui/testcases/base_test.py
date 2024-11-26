@@ -1,5 +1,5 @@
 import pytest
-from pages.home_screen_page import HomeScreenPage
+from test.ui.pages.home_screen_page import HomeScreenPage
 
 
 @pytest.mark.usefixtures('init_device')

@@ -1,6 +1,6 @@
 
 import pytest
-from utils.request_handler import RequestHandler
+from test.ui.utils.request_handler import RequestHandler
 
 
 class BasePage:

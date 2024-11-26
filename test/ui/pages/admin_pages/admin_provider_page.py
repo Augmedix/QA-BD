@@ -4,8 +4,8 @@ Locators & methods for Admin Portal.
 
 from selenium.webdriver.common.by import By
 
-from pages.admin_pages.admin_home_page import AdminHomePage
-from pages.base_page import BasePage
+from test.ui.pages.admin_pages.admin_home_page import AdminHomePage
+from test.ui.pages.base_page import BasePage
 
 
 class AdminProviderPage(BasePage):

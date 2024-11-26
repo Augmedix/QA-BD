@@ -9,11 +9,11 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-from pages.base_page import BasePage
-from pages.scp_pages.home_page import HomePage
-from pages.scp_pages.note_builder.build.pe_tab import PeTab
-from pages.scp_pages.note_builder.organize_tab import OrganizeTab
-from pages.scp_pages.test_Input_data import user_input_data
+from test.ui.pages.base_page import BasePage
+from test.ui.pages.scp_pages.home_page import HomePage
+from test.ui.pages.scp_pages.note_builder.build.pe_tab import PeTab
+from test.ui.pages.scp_pages.note_builder.organize_tab import OrganizeTab
+from test.ui.pages.scp_pages.test_Input_data import user_input_data
 
 
 class BuildTab(BasePage):

@@ -5,10 +5,10 @@ import time
 
 from appium.webdriver.common.appiumby import AppiumBy
 
-from pages.base_page import BasePage
-from pages.home_screen_page import HomeScreenPage
-from pages.support_screen_page import SupportScreenPage
-from data.data import Data
+from test.ui.pages.base_page import BasePage
+from test.ui.pages.home_screen_page import HomeScreenPage
+from test.ui.pages.support_screen_page import SupportScreenPage
+from test.ui.data.data import Data
 
 data = Data()
 

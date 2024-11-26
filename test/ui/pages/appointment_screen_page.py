@@ -7,19 +7,19 @@ import jwt
 import pytest
 import pytz
 from jwt import DecodeError
-from utils.request_handler import RequestHandler
+from test.ui.utils.request_handler import RequestHandler
 import json
 from datetime import datetime, timedelta
 import random
-from utils.api_request_data_handler import APIRequestDataHandler
+from test.ui.utils.api_request_data_handler import APIRequestDataHandler
 import string
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.common.exceptions import NoSuchElementException
-from data.data import Data
-from pages.base_page import BasePage
-from pages.home_screen_page import HomeScreenPage
-from pages.api_pages.appointment_api_page import AppointmentsApiPage
-from utils.upload_go_audio.upload_audio import upload_audio_to_go_note
+from test.ui.data.data import Data
+from test.ui.pages.base_page import BasePage
+from test.ui.pages.home_screen_page import HomeScreenPage
+from test.ui.pages.api_pages.appointment_api_page import AppointmentsApiPage
+from test.ui.utils.upload_go_audio.upload_audio import upload_audio_to_go_note
 
 
 class AppointmentScreenPage(BasePage):

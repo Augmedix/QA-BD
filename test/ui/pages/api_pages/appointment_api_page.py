@@ -7,11 +7,11 @@ import jwt
 import pytest
 from jwt import DecodeError
 
-from pages.api_pages.base_page import BasePage
-from utils.api_request_data_handler import APIRequestDataHandler
-from utils.helper import get_formatted_date_str, get_iso_formatted_datetime_str, get_current_pst_time
-from utils.request_handler import RequestHandler
-from pages.api_pages.authorization_api_page import AuthorizationApiPage
+from test.ui.pages.api_pages.base_page import BasePage
+from test.ui.utils.api_request_data_handler import APIRequestDataHandler
+from test.ui.utils.helper import get_formatted_date_str, get_iso_formatted_datetime_str, get_current_pst_time
+from test.ui.utils.request_handler import RequestHandler
+from test.ui.pages.api_pages.authorization_api_page import AuthorizationApiPage
 
 
 class AppointmentsApiPage(BasePage):

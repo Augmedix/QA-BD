@@ -7,7 +7,7 @@ import json
 import pytest
 from requests import JSONDecodeError
 
-from utils.api_request_data_handler import APIRequestDataHandler
+from test.ui.utils.api_request_data_handler import APIRequestDataHandler
 
 
 

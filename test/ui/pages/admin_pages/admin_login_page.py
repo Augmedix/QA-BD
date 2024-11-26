@@ -6,8 +6,8 @@ import time
 import pytest
 from selenium.webdriver.common.by import By
 
-from pages.base_page import BasePage
-from pages.admin_pages.admin_home_page import AdminHomePage
+from test.ui.pages.base_page import BasePage
+from test.ui.pages.admin_pages.admin_home_page import AdminHomePage
 
 
 class LoginPage(BasePage):

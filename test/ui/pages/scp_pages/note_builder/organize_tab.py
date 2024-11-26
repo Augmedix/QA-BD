@@ -9,11 +9,11 @@ from selenium.common import ElementClickInterceptedException
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
 
-import pages
-from pages.base_page import BasePage
-import pages.scp_pages
-import pages.scp_pages.home_page
-from utils.helper import get_current_time_stamp
+import test.ui.pages
+from test.ui.pages.base_page import BasePage
+import test.ui.pages.scp_pages
+import test.ui.pages.scp_pages.home_page
+from test.ui.utils.helper import get_current_time_stamp
 
 
 class OrganizeTab(BasePage):

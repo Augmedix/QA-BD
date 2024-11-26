@@ -6,8 +6,8 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 import allure
 
-from data.data import Data
-from pages.base_page import BasePage
+from test.ui.data.data import Data
+from test.ui.pages.base_page import BasePage
 
 
 class HomeScreenPage(BasePage):

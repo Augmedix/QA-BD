@@ -1,17 +1,16 @@
+import urllib.parse
+from test.ui.pages.admin_pages.admin_home_page import AdminHomePage
+
+
+from test.ui.data.data import Data
+from test.ui.pages.admin_pages.admin_login_page import LoginPage
+from test.ui.pages.admin_pages.admin_provider_page import AdminProviderPage
+from test.ui.pages.appointment_screen_page import AppointmentScreenPage
+from test.ui.pages.home_screen_page import HomeScreenPage
+from test.ui.testcases.base_test import BaseTest
+from test.ui.utils.email_client import EmailClient
 import allure
 import pytest
-
-import conftest as cnf
-from pages.admin_pages.admin_home_page import AdminHomePage
-from pages.admin_pages.admin_login_page import LoginPage
-from pages.admin_pages.admin_provider_page import AdminProviderPage
-from pages.appointment_screen_page import AppointmentScreenPage
-from pages.home_screen_page import HomeScreenPage
-from testcases.base_test import BaseTest
-from data.data import Data
-
-from utils.email_client import EmailClient
-import urllib.parse
 
 
 class TestHomeScreen(BaseTest):

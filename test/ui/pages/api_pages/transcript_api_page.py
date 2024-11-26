@@ -5,12 +5,12 @@ from jwt import DecodeError
 import json
 import random
 import uuid
-from pages.api_pages.base_page import BasePage
-from utils.api_request_data_handler import APIRequestDataHandler
-from utils.helper import get_formatted_date_str
-from utils.request_handler import RequestHandler
-from pages.api_pages.appointment_api_page import AppointmentsApiPage
-from utils.upload_go_audio.upload_audio import upload_audio_to_go_note
+from test.ui.pages.api_pages.base_page import BasePage
+from test.ui.utils.api_request_data_handler import APIRequestDataHandler
+from test.ui.utils.helper import get_formatted_date_str
+from test.ui.utils.request_handler import RequestHandler
+from test.ui.pages.api_pages.appointment_api_page import AppointmentsApiPage
+from test.ui.utils.upload_go_audio.upload_audio import upload_audio_to_go_note
 import time
 
 
