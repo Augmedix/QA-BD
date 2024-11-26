@@ -1,7 +1,7 @@
 import urllib.parse
 from test.ui.pages.admin_pages.admin_home_page import AdminHomePage
 
-
+import test.ui.conftest as cnf
 from test.ui.data.data import Data
 from test.ui.pages.admin_pages.admin_login_page import LoginPage
 from test.ui.pages.admin_pages.admin_provider_page import AdminProviderPage
