@@ -11,3 +11,4 @@ PyDrive
 sshtunnel
 pymysql
 langdetect
+html2text
