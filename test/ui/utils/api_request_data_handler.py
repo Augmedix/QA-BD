@@ -1,7 +1,7 @@
 import json
 import os
 
-from utils.app_constants import AppConstant
+from test.ui.utils.app_constants import AppConstant
 
 class APIRequestDataHandler:
     """
