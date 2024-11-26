@@ -2,7 +2,7 @@ from io import StringIO
 
 from jproperties import Properties
 
-from utils.app_constants import AppConstant
+from test.ui.utils.app_constants import AppConstant
 
 
 class ConfigParser:

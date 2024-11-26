@@ -7,7 +7,7 @@ from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
 from pydrive.files import ApiRequestError
 
-from utils.app_constants import AppConstant
+from test.ui.utils.app_constants import AppConstant
 
 
 class GoogleDriveManager:

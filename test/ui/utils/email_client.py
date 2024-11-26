@@ -8,7 +8,7 @@ from imap_tools import MailBox, AND
 from urllib.parse import urlparse, parse_qs
 from datetime import datetime
 
-from utils.credentials import client_mail, client_password
+from test.ui.utils.credentials import client_mail, client_password
 
 
 class EmailClient:

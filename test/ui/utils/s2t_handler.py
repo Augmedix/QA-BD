@@ -5,7 +5,7 @@ import pytest
 import pytz
 import requests
 
-from utils.uploadscript import nrt_upload
+from test.ui.utils.uploadscript import nrt_upload
 
 
 class S2THandler:

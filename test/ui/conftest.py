@@ -14,8 +14,7 @@ import shutil
 import sys
 import requests
 from requests.auth import HTTPBasicAuth
-import allure
-import pytest
+
 from _pytest.mark import Mark, MarkDecorator
 from allure_commons.types import AttachmentType
 from appium import webdriver as appium_driver
@@ -36,6 +35,8 @@ from test.ui.utils.google_drive_manager import GoogleDriveManager
 from test.ui.utils.lambdatest_manager import LambdaManager
 from appium.webdriver.common.appiumby import AppiumBy
 from test.ui.utils.helper import get_formatted_date_str, generate_random_string
+import allure
+import pytest
 
 
 class Unmarker:

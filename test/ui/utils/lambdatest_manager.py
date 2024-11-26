@@ -1,7 +1,7 @@
 import pytest
 import requests
-from utils import helper
-from utils.app_constants import AppConstant
+from test.ui.utils import helper
+from test.ui.utils.app_constants import AppConstant
 
 def read_file(path: str):
     """

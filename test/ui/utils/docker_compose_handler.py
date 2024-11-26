@@ -1,6 +1,6 @@
 import pytest
 import yaml
-from utils.app_constants import AppConstant
+from test.ui.utils.app_constants import AppConstant
 
 class DockerComposeHandler:
     def __init__(self):
