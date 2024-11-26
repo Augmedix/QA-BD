@@ -2,7 +2,7 @@ import pytest
 import requests
 from requests.structures import CaseInsensitiveDict
 
-from utils.s2t_handler import S2THandler
+from test.ui.utils.s2t_handler import S2THandler
 
 
 def log_scribe_out(token):

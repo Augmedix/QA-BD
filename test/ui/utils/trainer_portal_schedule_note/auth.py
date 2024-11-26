@@ -4,8 +4,8 @@ import pytest
 import requests
 from requests.structures import CaseInsensitiveDict
 
-import utils.trainer_portal_schedule_note.schedule_note as schedule_note
-from utils.note_checking_and_deleting.get_auth_token import get_auth_token
+import test.ui.utils.trainer_portal_schedule_note.schedule_note as schedule_note
+from test.ui.utils.note_checking_and_deleting.get_auth_token import get_auth_token
 
 
 def get_trainer_portal_auth_and_schedule_note(admin_email, password, paired_scribe_id):

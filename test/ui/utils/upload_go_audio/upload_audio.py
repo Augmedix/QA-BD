@@ -1,5 +1,5 @@
-from utils.upload_go_audio.nrt_core import upload_nrt_file
-from utils.upload_go_audio.authentication import get_auth_token
+from test.ui.utils.upload_go_audio.nrt_core import upload_nrt_file
+from test.ui.utils.upload_go_audio.authentication import get_auth_token
 import pytest
 import jwt
 

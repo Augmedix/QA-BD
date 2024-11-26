@@ -1,4 +1,4 @@
-from utils.s2t_handler import S2THandler
+from test.ui.utils.s2t_handler import S2THandler
 
 
 def get_auth_token(username, password):

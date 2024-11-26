@@ -3,7 +3,7 @@ import json
 import pytest
 import requests
 
-import utils.docapplogin.provider_service as provider_settings
+import test.ui.utils.docapplogin.provider_service as provider_settings
 
 
 def get_auth_token_and_send_req():

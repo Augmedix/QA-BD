@@ -7,8 +7,8 @@ import pytz
 import requests
 from requests.structures import CaseInsensitiveDict
 
-import utils.note_checking_and_deleting.delete_note as delete_note
-from utils.note_checking_and_deleting.get_auth_token import get_auth_token
+import test.ui.utils.note_checking_and_deleting.delete_note as delete_note
+from test.ui.utils.note_checking_and_deleting.get_auth_token import get_auth_token
 
 
 def check_current_notes_and_delete(provider_id):

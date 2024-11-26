@@ -1,4 +1,4 @@
-from utils.testrail.testrun_handler import TestRunHandler
+from test.ui.utils.testrail.testrun_handler import TestRunHandler
 
 
 class TestResultHandler:

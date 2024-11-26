@@ -1,4 +1,4 @@
-from utils.testrail.project_handler import ProjectHandler
+from test.ui.utils.testrail.project_handler import ProjectHandler
 
 
 class TestRunHandler:
