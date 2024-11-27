@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.8'] # or '3.9'
+        python-version: ['3.9'] # or '3.10'
 
     steps:
     # Step 1: Checkout Repository
@@ -31,7 +31,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pylint pylint-exit appium-client==1.9.5 allure-pytest # Specify compatible appium-client version
+        pip install pylint pylint-exit appium-client allure-pytest 
 
     # Step 4: Install Appium via npm
     - name: Install Appium
