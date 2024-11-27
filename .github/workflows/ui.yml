@@ -39,9 +39,9 @@ jobs:
     # Step 5: Run Tests with SECRET_KEY Environment Variable
     - name: Run the script with SECRET_KEY
       env:
-       	LT_USERNAME: ${{ secrets.LT_USERNAME }}
-       	LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
-								SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        LT_USERNAME: ${{ secrets.LT_USERNAME }}
+        LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
         pytest test/ui/testcases/test_home_screen.py --alluredir=TestResults/allure-reports
 
