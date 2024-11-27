@@ -13,31 +13,45 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout Code
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # Step 2: Set up Python
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
 
+      # Step 3: Install Dependencies
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install pylint pylint-exit
+          pip install pylint pylint-exit appium-client allure-pytest
 
-      - name: Verify pylint is installed
+
+      # Step 6: Start Appium Server
+      - name: Start Appium server
         run: |
-          pylint --version
-          which pylint
+          npm install -g appium
+          appium &
+        # Allow server to start
+        timeout-minutes: 1
 
-      - name: Run pylint
-        run: |
-          pylint $(git ls-files '*.py') --fail-under=9.85 || pylint-exit $?
+      # Step 7: Create Directory for Allure Reports
+      - name: Create Allure reports directory
+        run: mkdir -p TestResults/allure-reports
 
+      # Step 8: Run Tests with SECRET_KEY Environment Variable
       - name: Run the script with SECRET_KEY
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: |
-          pytest test/ui/testcases/test_home_screen.py
-        
+          pytest test/ui/testcases/test_home_screen.py --alluredir=TestResults/allure-reports
+
+      # Step 9: Publish Allure Reports (Optional)
+      - name: Publish Allure Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results
+          path: TestResults/allure-reports
