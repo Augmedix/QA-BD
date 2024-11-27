@@ -12,3 +12,4 @@ sshtunnel
 pymysql
 langdetect
 html2text
+imap-tools
