@@ -11,47 +11,55 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.6'] # Adjusted Python version for compatibility
 
     steps:
-      # Step 1: Checkout Code
-      - name: Checkout code
-        uses: actions/checkout@v2
+    # Step 1: Checkout Repository
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      # Step 2: Set up Python
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.6'
+    # Step 2: Set up Python Environment
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
 
-      # Step 3: Install Dependencies
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt
-          pip install pylint pylint-exit appium-client allure-pytest
+    # Step 3: Install Dependencies
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pylint pylint-exit appium-client==1.9.5 allure-pytest # Specify compatible appium-client version
 
+    # Step 4: Install Appium via npm
+    - name: Install Appium
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y npm
+        npm install -g appium
 
-      # Step 6: Start Appium Server
-      - name: Start Appium server
-        run: |
-          npm install -g appium
-          appium &
-        # Allow server to start
-        timeout-minutes: 1
+    # Step 5: Start Appium Server
+    - name: Start Appium server
+      run: |
+        appium &
+        sleep 15 # Wait for the server to start
 
-      # Step 7: Create Directory for Allure Reports
-      - name: Create Allure reports directory
-        run: mkdir -p TestResults/allure-reports
+    # Step 6: Create Directory for Allure Reports
+    - name: Create Allure reports directory
+      run: mkdir -p TestResults/allure-reports
 
-      # Step 8: Run Tests with SECRET_KEY Environment Variable
-      - name: Run the script with SECRET_KEY
-        env:
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
-        run: |
-          pytest test/ui/testcases/test_home_screen.py --alluredir=TestResults/allure-reports
+    # Step 7: Run Tests with SECRET_KEY Environment Variable
+    - name: Run the script with SECRET_KEY
+      env:
+        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      run: |
+        pytest test/ui/testcases/test_home_screen.py --alluredir=TestResults/allure-reports
 
-      # Step 9: Publish Allure Reports (Optional)
-      - name: Publish Allure Reports
-        uses: actions/upload-artifact@v3
-        with:
-          name: allure-results
-          path: TestResults/allure-reports
+    # Step 8: Publish Allure Reports (Optional)
+    - name: Publish Allure Reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: allure-results
+        path: TestResults/allure-reports
