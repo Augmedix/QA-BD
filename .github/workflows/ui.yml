@@ -32,31 +32,20 @@ jobs:
         pip install -r requirements.txt
         
 
-    # Step 4: Install Appium via npm
-    - name: Install Appium
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y npm
-        npm install -g appium
-
-    # Step 5: Start Appium Server
-    - name: Start Appium server
-      run: |
-        appium &
-        sleep 15 # Wait for the server to start
-
-    # Step 6: Create Directory for Allure Reports
+    # Step 4: Create Directory for Allure Reports
     - name: Create Allure reports directory
       run: mkdir -p TestResults/allure-reports
 
-    # Step 7: Run Tests with SECRET_KEY Environment Variable
+    # Step 5: Run Tests with SECRET_KEY Environment Variable
     - name: Run the script with SECRET_KEY
       env:
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+       	LT_USERNAME: ${{ secrets.LT_USERNAME }}
+       	LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+								SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
         pytest test/ui/testcases/test_home_screen.py --alluredir=TestResults/allure-reports
 
-    # Step 8: Publish Allure Reports (Optional)
+    # Step 6: Publish Allure Reports (Optional)
     - name: Publish Allure Reports
       uses: actions/upload-artifact@v3
       with:
