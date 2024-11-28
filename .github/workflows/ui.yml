@@ -37,11 +37,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Validate environment variables
-        run: |
-          if [ -z "$LT_USERNAME" ]; then echo "LT_USERNAME is not set!"; exit 1; fi
-          if [ -z "$LT_ACCESS_KEY" ]; then echo "LT_ACCESS_KEY is not set!"; exit 1; fi
-          if [ -z "$SECRET_KEY" ]; then echo "SECRET_KEY is not set!"; exit 1; fi
+      - name: Debug secrets
+  run: |
+    echo "LT_USERNAME is ${LT_USERNAME:+SET}"
+    echo "LT_ACCESS_KEY is ${LT_ACCESS_KEY:+SET}"
+    echo "SECRET_KEY is ${SECRET_KEY:+SET}"
 
       - name: Run tests with LambdaTest
         env:
