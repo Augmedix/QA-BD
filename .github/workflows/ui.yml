@@ -16,14 +16,17 @@ jobs:
         python-version: ['3.10']
 
     steps:
+      # Step 1: Checkout Code
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Step 2: Set Up Python
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
 
+      # Step 3: Cache Dependencies
       - name: Cache pip dependencies
         uses: actions/cache@v3
         with:
@@ -32,17 +35,24 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
+      # Step 4: Install Dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # Step 5: Debug Secrets
       - name: Debug secrets
-  run: |
-    echo "LT_USERNAME is ${LT_USERNAME:+SET}"
-    echo "LT_ACCESS_KEY is ${LT_ACCESS_KEY:+SET}"
-    echo "SECRET_KEY is ${SECRET_KEY:+SET}"
+        run: |
+          echo "LT_USERNAME is ${LT_USERNAME:+SET}"
+          echo "LT_ACCESS_KEY is ${LT_ACCESS_KEY:+SET}"
+          echo "SECRET_KEY is ${SECRET_KEY:+SET}"
+        env:
+          LT_USERNAME: ${{ secrets.LT_USERNAME }}
+          LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
 
+      # Step 6: Run Tests with LambdaTest
       - name: Run tests with LambdaTest
         env:
           LT_USERNAME: ${{ secrets.LT_USERNAME }}
@@ -52,12 +62,14 @@ jobs:
           pytest test/ui/testcases/test_home_screen.py --alluredir=TestResults/allure-reports \
             --base-url="https://${{ secrets.LT_USERNAME }}:${{ secrets.LT_ACCESS_KEY }}@mobile-hub.lambdatest.com/wd/hub"
 
+      # Step 7: Publish Allure Reports
       - name: Publish Allure Reports
         uses: actions/upload-artifact@v3
         with:
           name: allure-results
           path: TestResults/allure-reports
 
+      # Step 8: Upload Test Artifacts
       - name: Upload test artifacts
         uses: actions/upload-artifact@v3
         with:
