@@ -75,14 +75,9 @@ class TestHomeScreen(BaseTest):
         self.home_screen_page.open_the_app()
         self.home_screen_page.login_with_password(pytest.provider_email, self.data.reset_password)
 
-assert self.home_screen_page.is_element_visible(self.appointment_screen_page.TRACKER_TAB, 5)
-            # assert self.home_screen_page.is_element_visible(self.appointment_screen_page.TO_DO_TAB, 1)
-    
-
-    
-
-     # with allure.step('Appointment screen should be displayed with Tracker, To-DO tabs'):
-            
+# Assert visibility of key UI elements
+        assert self.home_screen_page.is_element_visible(self.appointment_screen_page.TRACKER_TAB, 5)
+        # assert self.home_screen_page.is_element_visible(self.appointment_screen_page.TO_DO_TAB, 1)
 
     
 ##TEST
