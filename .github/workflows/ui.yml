@@ -59,8 +59,7 @@ jobs:
           LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: |
-          pytest test/ui/testcases/test_home_screen.py --alluredir=TestResults/allure-reports \
-            --base-url="https://${{ secrets.LT_USERNAME }}:${{ secrets.LT_ACCESS_KEY }}@mobile-hub.lambdatest.com/wd/hub"
+          pytest test/ui/testcases/test_home_screen.py --alluredir=TestResults/allure-reports 
 
       # Step 7: Publish Allure Reports
       - name: Publish Allure Reports
