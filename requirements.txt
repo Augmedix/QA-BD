@@ -1,5 +1,5 @@
 allure-pytest
-appium-python-client  # Install the latest version compatible with Python >=3.9
+appium-python-client  # Install  the latest version compatible with Python >=3.9
 cryptography
 jproperties
 pyjwt
