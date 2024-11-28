@@ -58,6 +58,7 @@ jobs:
           LT_USERNAME: ${{ secrets.LT_USERNAME }}
           LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
           APPIUM_SERVER_URL: "https://${{ secrets.LT_USERNAME }}:${{ secrets.LT_ACCESS_KEY }}@mobile-hub.lambdatest.com/wd/hub"
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: |
           pytest test/ui/testcases/test_home_screen.py --alluredir=TestResults/allure-reports
 
