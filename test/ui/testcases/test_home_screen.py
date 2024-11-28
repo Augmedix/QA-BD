@@ -75,9 +75,21 @@ class TestHomeScreen(BaseTest):
         self.home_screen_page.open_the_app()
         self.home_screen_page.login_with_password(pytest.provider_email, self.data.reset_password)
 
-# Assert visibility of key UI elements
-        assert self.home_screen_page.is_element_visible(self.appointment_screen_page.TRACKER_TAB, 5)
-        # assert self.home_screen_page.is_element_visible(self.appointment_screen_page.TO_DO_TAB, 1)
+    @allure.severity(allure.severity_level.BLOCKER)
+    @pytest.mark.sanity
+    @pytest.mark.usefixtures("reset_app")
+    def test_login_with_valid_credentials(self):
+        with allure.step('Login button should work properly'):
+            self.home_screen_page.login_with_password(self.data.home_screen_provider, self.data.provider_password)
+        # with allure.step('Logging in modal should be appear and then disappear'):      //Not able to capture
+        #     assert self.home_screen_page.is_element_visible(self.home_screen_page.LOGGING_IN_MODAL,5)
+
+        with allure.step('Appointment screen should be displayed with Tracker, To-DO tabs'):
+            assert self.home_screen_page.is_element_visible(self.appointment_screen_page.TRACKER_TAB, 5)
+            # assert self.home_screen_page.is_element_visible(self.appointment_screen_page.TO_DO_TAB, 1)
+    
+
+
 
     
 ##TEST
