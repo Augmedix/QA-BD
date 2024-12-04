@@ -458,13 +458,10 @@ def get_requested_browser(requested_browser_name='chrome'):
             chrome_options.add_argument("--disable-notifications")
             chrome_options.add_argument("--disable-save-password-bubble")
             
-            desired_capabilities = DesiredCapabilities.CHROME
-            desired_capabilities['loggingPrefs'] = {'browser': 'ALL'}
-            desired_capabilities.update(chrome_options.to_capabilities())
+            chrome_options.set_capability('goog:loggingPrefs', {'browser': 'ALL'})
             driver = webdriver.Remote(
                 command_executor=selenium_grid,
-                options=chrome_options,
-                desired_capabilities=desired_capabilities,
+                options=chrome_options
             )
             
         # Running locally, without Jenkins
