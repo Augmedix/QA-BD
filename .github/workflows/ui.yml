@@ -41,36 +41,32 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      # Step 5: Debug Secrets
-      - name: Debug secrets
+      # Step 5: Test Selenium Grid Connection
+      - name: Test Selenium Grid Connection
         run: |
-          echo "LT_USERNAME is ${LT_USERNAME:+SET}"
-          echo "LT_ACCESS_KEY is ${LT_ACCESS_KEY:+SET}"
-          echo "SECRET_KEY is ${SECRET_KEY:+SET}"
-        env:
-          LT_USERNAME: ${{ secrets.LT_USERNAME }}
-          LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
-          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          curl -v http://34.195.102.167:4444/status
+        continue-on-error: true  # Allow the job to continue for debugging purposes
 
-      # Step 6: Run Tests with LambdaTest
-      - name: Run tests with LambdaTest
+      # Step 6: Define Selenium Grid Environment Variable
+      - name: Set Selenium Grid Environment
+        run: echo "SELENIUM_GRID_URL=http://34.195.102.167:4444/wd/hub" >> $GITHUB_ENV
+
+      # Step 7: Run Tests
+      - name: Run tests
         env:
-          LT_USERNAME: ${{ secrets.LT_USERNAME }}
-          LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
-          APPIUM_SERVER_URL: "https://${{ secrets.LT_USERNAME }}:${{ secrets.LT_ACCESS_KEY }}@mobile-hub.lambdatest.com/wd/hub"
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
         run: |
           pytest test/ui/testcases/test_home_screen.py --alluredir=TestResults/allure-reports \
             --env=stage --enable-jenkins=yes
 
-      # Step 7: Publish Allure Reports
+      # Step 8: Publish Allure Reports
       - name: Publish Allure Reports
         uses: actions/upload-artifact@v3
         with:
           name: allure-results
           path: TestResults/allure-reports
 
-      # Step 8: Upload Test Artifacts
+      # Step 9: Upload Test Artifacts
       - name: Upload test artifacts
         uses: actions/upload-artifact@v3
         with:
