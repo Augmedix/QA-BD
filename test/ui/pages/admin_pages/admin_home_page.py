@@ -3,7 +3,6 @@ Locators & methods for Admin Portal.
 """
 
 
-import test.ui.pages
 from test.ui.pages.base_page import BasePage
 
 from selenium.webdriver.common.by import By

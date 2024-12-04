@@ -298,7 +298,7 @@ def init_device(request):
     yield _appium_driver
 
 
-@pytest.fixture(scope='class', autouse=True)
+""" @pytest.fixture(scope='class', autouse=True)
 def init_page_objects(request, init_device):    # pylint: disable=unused-argument, too-many-locals, redefined-outer-name
     with open(AppConstant.PAGE_OBJECTS_CONFIG_FILE, 'r', encoding='utf-8') as file:
         module_info_list = file.readlines()
@@ -324,7 +324,7 @@ def init_page_objects(request, init_device):    # pylint: disable=unused-argumen
                     page_object = getattr(module, class_name)(request.cls.appium_driver)
                     setattr(current_object, object_name, page_object)
                 except AttributeError as attribute_error:
-                    print(f'Attribute \'{attribute_error.name}\' not found for {attribute_error.obj.__name__}.')
+                    print(f'Attribute \'{attribute_error.name}\' not found for {attribute_error.obj.__name__}.') """
 
 
 @pytest.fixture(scope='class', name='marker', autouse=True)
