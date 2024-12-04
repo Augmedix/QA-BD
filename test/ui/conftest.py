@@ -463,7 +463,7 @@ def get_requested_browser(requested_browser_name='chrome'):
             desired_capabilities.update(chrome_options.to_capabilities())
             driver = webdriver.Remote(
                 command_executor=selenium_grid,
-                #options=chrome_options,
+                options=chrome_options,
                 desired_capabilities=desired_capabilities,
             )
             
